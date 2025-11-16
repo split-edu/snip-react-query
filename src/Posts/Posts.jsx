@@ -1,9 +1,10 @@
 import Post from "./Post/Post.jsx";
 import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 
 const fetchPosts = async () => {
-  const response = await fetch('https://jsonplaceholder.typicode.com/posts');
-  return await response.json();
+  const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+  return response.data;
 };
 
 function Posts() {
